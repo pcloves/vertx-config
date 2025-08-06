@@ -144,6 +144,7 @@ public class GitConfigStore implements ConfigStore {
       } else {
         git.checkout()
           .setName(branch)
+          .setCreateBranch(true)
           .setUpstreamMode(CreateBranchCommand.SetupUpstreamMode.TRACK)
           .setStartPoint(remote + "/" + branch)
           .call();
